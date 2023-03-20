@@ -23,8 +23,7 @@ public class PostRepository {
 
     public Post save(Post post) {
         if (post.getId() == 0) {
-            post.setId(idCounter.get());
-            idCounter.incrementAndGet();
+            post.setId(idCounter.getAndIncrement());
             data.put(post.getId(), post);
         } else {
             var tmp = data.get(post.getId());
