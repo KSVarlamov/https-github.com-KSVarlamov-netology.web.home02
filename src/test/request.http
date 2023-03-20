@@ -67,6 +67,7 @@ Content-Type: application/json
 }
 
 ###
+
 GET http://localhost:8080/api/posts
 Accept: application/json
 
@@ -85,8 +86,8 @@ Accept: application/json
 DELETE http://localhost:8080/api/posts/sefsef
 Accept: application/json
 
-
 ###
+
 GET http://localhost:8080/api/posts
 Accept: application/json
 
