@@ -1,4 +1,5 @@
 GET http://localhost:8080/api/posts
+Accept: application/json
 
 ###
 
@@ -7,5 +8,87 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "content": "Last Post"
+  "content": "Post 1. asdg sdfg sdfg dsfg "
 }
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Post 2. asdfgljkh sdlfkg'"
+}
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Post 3. askdfakdshf;aldg sj"
+}
+
+###
+
+GET http://localhost:8080/api/posts/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/posts/
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/posts/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/posts/1000
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/posts/aaa
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 2,
+  "content": "Changed Post with id=2"
+}
+
+###
+GET http://localhost:8080/api/posts
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/posts/3
+Accept: application/json
+
+
+###
+DELETE http://localhost:8080/api/posts/500
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/posts/sefsef
+Accept: application/json
+
+
+###
+GET http://localhost:8080/api/posts
+Accept: application/json
+
+###
+
