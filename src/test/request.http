@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "content": "Post 1. asdg sdfg sdfg dsfg "
+  "content": "Post 1. {{$random.alphabetic(100)}} "
 }
 
 ###
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "content": "Post 2. asdfgljkh sdlfkg'"
+  "content": "Post 2. {{$random.alphabetic(1000)}}"
 }
 
 ###
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "content": "Post 3. askdfakdshf;aldg sj"
+  "content": "Post 3. {{$random.alphabetic(1000)}}"
 }
 
 ###
@@ -63,7 +63,7 @@ Content-Type: application/json
 
 {
   "id": 2,
-  "content": "Changed Post with id=2"
+  "content": "Changed Post with id 2"
 }
 
 ###
