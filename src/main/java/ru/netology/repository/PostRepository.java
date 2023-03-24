@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 @Repository
 public class PostRepository {
@@ -16,11 +17,16 @@ public class PostRepository {
     private static final AtomicLong idCounter = new AtomicLong(1L);
 
     public List<Post> all() {
-        return data.values().parallelStream().toList();
+        return data.values().parallelStream().filter(Post::isActual).collect(Collectors.toList());
     }
 
     public Optional<Post> getById(long id) {
-        return Optional.ofNullable(data.get(id));
+        Optional<Post> result = Optional.ofNullable(data.get(id));
+        if (result.isPresent() && result.get().isActual()) {
+            return result;
+        } else {
+            return Optional.empty();
+        }
     }
 
     public Post save(Post post) {
@@ -29,7 +35,7 @@ public class PostRepository {
             data.put(post.getId(), post);
         } else {
             var tmp = data.get(post.getId());
-            if (tmp != null) {
+            if (tmp != null && tmp.isActual()) {
                 data.put(post.getId(), post);
             } else {
                 throw new NotFoundException();
@@ -39,9 +45,11 @@ public class PostRepository {
     }
 
     public void removeById(long id) {
-        var tmp = data.remove(id);
+        var tmp = data.get(id);
         if (tmp == null) {
             throw new NotFoundException(id + " not found");
+        } else {
+            tmp.setActual(false);
         }
     }
 }

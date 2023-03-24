@@ -3,6 +3,15 @@ package ru.netology.model;
 public class Post {
   private long id;
   private String content;
+  private boolean isActual = true;
+
+  public boolean isActual() {
+    return isActual;
+  }
+
+  public void setActual(boolean actual) {
+    isActual = actual;
+  }
 
   public Post() {
   }
