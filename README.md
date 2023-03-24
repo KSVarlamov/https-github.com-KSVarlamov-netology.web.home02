@@ -1,7 +1,8 @@
-# Домашнее задание к занятию «2.1. Servlet Containers»
+# Домашнее задание к занятию «2.3. Spring Web MVC»
 
-Решение задачи [отсюда](https://github.com/netology-code/jspr-homeworks/tree/master/04_servlets)
+Решение задачи [отсюда](https://github.com/netology-code/jspr-homeworks/tree/master/06_mvc)
 
-+ Запуск с помощью Webapp-runner
-+ DI Annotation Config
++ Удаление запуска с webapp-runner
++ Миграция на Spring MVC
++ Запуск со встроенным Tomcat
 
